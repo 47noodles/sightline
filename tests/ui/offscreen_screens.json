@@ -1,0 +1,8 @@
+{
+  "synchronousWindowSystemEvents": true,
+  "windowFrameMargins": false,
+  "screens": [
+    {"name": "primary-125", "x": 0, "y": 0, "width": 1920, "height": 1080, "logicalDpi": 120, "logicalBaseDpi": 96, "dpr": 1},
+    {"name": "right-200", "x": 1920, "y": -240, "width": 3840, "height": 2160, "logicalDpi": 192, "logicalBaseDpi": 96, "dpr": 1}
+  ]
+}

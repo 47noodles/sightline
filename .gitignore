@@ -1,0 +1,32 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Local output: test results, benchmarks, screenshots, recordings, logs
+/out/
+/recordings/
+logs/
+*.log
+
+# Models are downloaded at set-up into %LOCALAPPDATA%\Sightline\models and are never committed
+models/
+*.onnx
+*.ort
+*.task
+*.tflite
+*.tar.bz2
+*.part
+
+# Internal notes, scratch files and local secrets
+docs/internal/
+scratch/
+*.scratch.*
+.env
+.env.*
+.claude/settings.local.json

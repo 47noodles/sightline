@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sightline"
+version = "0.1.0"
+description = "Use a Windows computer with only your eyes and voice: webcam gaze and head pointer, blink clicks, offline speech commands and dictation."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+requires-python = ">=3.12"
+authors = [{ name = "Sightline contributors" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Win32 (MS Windows)",
+    "Operating System :: Microsoft :: Windows :: Windows 10",
+    "Operating System :: Microsoft :: Windows :: Windows 11",
+    "Topic :: Adaptive Technologies",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3.13",
+]
+# Each subsystem owner appends the runtime dependencies it needs here.
+dependencies = [
+    # core and ui
+    "numpy>=2.0",
+    "PySide6>=6.8",
+    # vision
+    "opencv-python>=4.10",
+    "mediapipe>=0.10.20",
+    "cv2-enumerate-cameras>=1.4",
+    # speech
+    "sounddevice>=0.5",
+    "onnxruntime>=1.20",
+    "hassil>=3.0",
+    "text2num>=2.5",
+    "rapidfuzz>=3.0",
+    "sherpa-onnx>=2.0",
+    "tokenizers>=0.20",
+    # desktop
+    "comtypes>=1.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/47noodles/sightline"
+Documentation = "https://github.com/47noodles/sightline#readme"
+Repository = "https://github.com/47noodles/sightline"
+Issues = "https://github.com/47noodles/sightline/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+# The app alone, with its log on the console: for development, so a crash stays a crash.
+sightline-console = "sightline.app:main"
+
+[project.gui-scripts]
+# The app under its watchdog, which starts it again after a crash (sightline/app.py).
+sightline = "sightline.app:supervise"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+sightline = ["assets/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "models: needs downloaded model files (skipped when they are missing)",
+    "gui: creates Qt windows (needs an interactive desktop)",
+    "desktop: injects real mouse or keyboard input or reads the live desktop (takes the desktop lock)",
+    "slow: takes more than a few seconds",
+]
