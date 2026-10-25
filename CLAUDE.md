@@ -7,7 +7,11 @@ speech commands and dictation.  Python 3.13 and PySide6, Apache-2.0.
 **Status: alpha.**  Every planned feature is built and the safe test suite
 passes (1656 tests).  Nothing has been tuned on a real webcam, microphone
 or screen yet; every threshold is a prior.  The next job is the first
-session on real hardware (`docs/TESTING.md`).
+session on real hardware.
+
+**Start here with Lachlan:** walk him through `docs/FIRST-TEST.md` (install,
+wizard, a twelve-step try-out, how to stop it), collect his notes, then
+move on to the full plan in `docs/TESTING.md`.
 
 ## Layout and ownership
 
@@ -44,7 +48,7 @@ The first run downloads about 620 MB of models into
 ## Tests
 
 The safe suite, which touches no camera, microphone, window, sound or
-input (about 40 seconds):
+input (about 40 seconds on a desktop, about 6 minutes on a laptop):
 
 ```powershell
 $env:QT_QPA_PLATFORM = "offscreen"

@@ -174,4 +174,6 @@ For everyday use, start it under the watchdog, which starts it again after a cra
 
 The first start opens the set-up wizard, which downloads about 620 MB of models.
 To stop Sightline, click its icon beside the clock and choose Quit Sightline.
+
+First time?  docs\FIRST-TEST.md walks you through set-up and what to try.
 '@

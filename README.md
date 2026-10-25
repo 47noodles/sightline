@@ -20,6 +20,10 @@ palsy, and for the helpers who set it up with them.
 > For the first sessions, keep a helper, or a mouse and keyboard, within
 > reach.
 
+**Trying it for the first time?**  Follow
+[`docs/FIRST-TEST.md`](docs/FIRST-TEST.md): install, the set-up wizard,
+twelve things to try and how to stop it, in about 30 minutes.
+
 ## Features
 
 * **Eye and head pointer.**  The pointer jumps to where you look, and small
@@ -382,7 +386,7 @@ it.
 * **Test tools.**  `install.ps1 -Dev` also installs pytest (or
   `.venv\Scripts\python.exe -m pip install -e ".[dev]"`).
 * **The safe test suite** touches no camera, microphone, window, sound or
-  input, and takes under a minute:
+  input, and takes about 1 to 6 minutes depending on the PC:
 
   ```powershell
   $env:QT_QPA_PLATFORM = "offscreen"
